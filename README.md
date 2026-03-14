@@ -25,6 +25,7 @@ curl -fsSL https://cli-tools.github.io/misc/bin/install-network-tools.sh | sh
 
 - Debian / Ubuntu (`apt`)
 - Fedora / RHEL (`dnf`)
+- openSUSE / SLES (`zypper`)
 - Alpine Linux (`apk`)
 - Arch Linux (`pacman`)
 

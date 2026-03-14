@@ -1,7 +1,7 @@
 # install-net-utils.sh
 # POSIX shell script to install common network troubleshooting tools.
 # Installs: ping, iproute2 (ip, ss), nslookup, dig, ifconfig
-# Works on Debian/Ubuntu, Fedora/RHEL, Alpine, and Arch.
+# Works on Debian/Ubuntu, Fedora/RHEL, openSUSE/SLES, Alpine, and Arch.
 # Usage: . ./install-net-utils.sh
 
 install_pkgs() {
@@ -20,6 +20,8 @@ install_pkgs() {
         PM="apt"
     elif command -v dnf >/dev/null 2>&1; then
         PM="dnf"
+    elif command -v zypper >/dev/null 2>&1; then
+        PM="zypper"
     elif command -v apk >/dev/null 2>&1; then
         PM="apk"
     elif command -v pacman >/dev/null 2>&1; then
@@ -42,6 +44,13 @@ install_pkgs() {
             $SUDO dnf install -y \
                 bind-utils \
                 iproute \
+                iputils \
+                net-tools
+            ;;
+        zypper)
+            $SUDO zypper install -y \
+                bind-utils \
+                iproute2 \
                 iputils \
                 net-tools
             ;;
