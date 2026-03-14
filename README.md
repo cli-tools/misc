@@ -3,16 +3,16 @@
 Miscellaneous CLI tool installers — POSIX shell scripts that detect your
 package manager and install common utilities.
 
-## Quick install
+## Quick install (all tools)
+
+```sh
+curl -fsSL https://cli-tools.github.io/misc/install.sh | sh
+```
+
+## Install a single tool
 
 ```sh
 curl -fsSL https://cli-tools.github.io/misc/bin/install-network-tools.sh | sh
-```
-
-Or with `wget`:
-
-```sh
-wget -qO- https://cli-tools.github.io/misc/bin/install-network-tools.sh | sh
 ```
 
 ## Included tools
